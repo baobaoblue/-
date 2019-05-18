@@ -29,7 +29,7 @@ console.log(arr)
 - ES6 set
 
 ```
-let arr1 = new Set(arr)
+let arr1 = Array.from(new Set(arr))
 console.log(arr1)
 ```
 - indexOf
@@ -60,7 +60,8 @@ var obj = {}
 for(i = 0; i < arr.length; i++){
     var item  = arr[i]
     if(typeof obj[item] !== 'undefined'){
-        arr.splice(i,1)
+        arr[i] = arr[arr.length -1]
+        arr.length--
         i--
     }else{
         obj[item] = item
